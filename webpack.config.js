@@ -1,6 +1,8 @@
 'use strict'
 
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var Uglify = webpack.optimize.UglifyJsPlugin;
 var path = require('path');
 var root = __dirname;
 
@@ -44,6 +46,7 @@ module.exports = {
     }]
   },
   plugins: [
-  	new ExtractTextPlugin('css/[name].css')
+  	new ExtractTextPlugin('css/[name].css'),
+    new Uglify()
   ]
 };
