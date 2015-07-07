@@ -5,7 +5,7 @@ import homeComponent from './home.component';
 let homeModule = angular.module('home', [
 	uiRouter
 ])
-.config(($stateProvider, $urlRouterProvider)=>{
+.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider)=>{
 	$urlRouterProvider.otherwise('/');
 	
 	$stateProvider
@@ -13,7 +13,7 @@ let homeModule = angular.module('home', [
 			url: '/',
 			template: '<home></home>'
 		});
-})
+}])
 .directive('home', homeComponent);
 
 export default homeModule;
